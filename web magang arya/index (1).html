@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jurnal PKL – Arya Putra Pratama</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ══ TOP WIDGETS ══ -->
+<button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
+<div id="clock-widget">🕐 <span id="clock-display">00:00:00</span></div>
+<button id="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+<!-- ══════════ SIDEBAR ══════════ -->
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">// Jurnal PKL</div>
+    <div class="sidebar-title">Laporan<br>Pengalaman</div>
+    <div class="sidebar-clock" id="sidebar-clock-display">--:--:--</div>
+  </div>
+  <div class="sidebar-user">
+    <div class="sidebar-avatar">🧑‍💻</div>
+    <div class="sidebar-user-info">
+      <div class="sidebar-user-name" id="sidebar-name">ARYA PUTRA PRATAMA</div>
+      <div class="sidebar-user-class">XI TKJ 3 · PKL 2026</div>
+    </div>
+  </div>
+
+  <div class="nav-section-label">Identitas</div>
+  <a class="nav-item active" onclick="showPage('profile',this)">
+    <span class="nav-icon">👤</span> Profil Saya <span class="nav-badge">01</span>
+  </a>
+
+  <div class="nav-section-label">Kegiatan Harian</div>
+  <a class="nav-item" onclick="showPage('absensi',this)">
+    <span class="nav-icon">📋</span> Absensi <span class="nav-badge">02</span>
+  </a>
+  <a class="nav-item" onclick="showPage('kegiatan',this)">
+    <span class="nav-icon">📝</span> Log Kegiatan <span class="nav-badge">03</span>
+  </a>
+
+  <div class="nav-section-label">Pengalaman Belajar</div>
+  <a class="nav-item" onclick="showPage('belajar',this);setExpTab('mikrotik')">
+    <span class="nav-icon">🔌</span> MikroTik <span class="nav-badge">04</span>
+  </a>
+  <a class="nav-item" onclick="showPage('belajar',this);setExpTab('debian')">
+    <span class="nav-icon">🖧</span> Debian Linux <span class="nav-badge">05</span>
+  </a>
+  <a class="nav-item" onclick="showPage('belajar',this);setExpTab('cisco')">
+    <span class="nav-icon">📡</span> Cisco <span class="nav-badge">06</span>
+  </a>
+
+  <div class="nav-section-label">Akhir</div>
+  <a class="nav-item" onclick="showPage('penutup',this)">
+    <span class="nav-icon">🎓</span> Penutup <span class="nav-badge">07</span>
+  </a>
+</nav>
+
+<!-- ══════════ MAIN ══════════ -->
+<div id="main">
+
+<!-- ══ PAGE: PROFIL ══ -->
+<div class="page active" id="page-profile">
+  <div class="page-eyebrow">// 01 — Identitas</div>
+  <h1 class="page-title">Profil <span class="title-accent">Saya</span></h1>
+  <p class="page-subtitle">Siswa PKL yang sedang belajar dunia jaringan komputer dan sistem operasi server secara langsung di lapangan.</p>
+  <div class="profile-grid">
+    <div class="profile-avatar-wrap">
+      <div class="profile-avatar">🧑‍💻</div>
+      <div class="profile-status"><div class="status-dot"></div> Sedang PKL</div>
+    </div>
+    <div class="profile-info">
+      <h2 id="profile-name">MUHAMAD ARYA PUTRA PRATAMA <span style="color:var(--accent)">PKL</span></h2>
+      <div class="profile-role">// NETWORK &amp; SERVER LEARNER</div>
+      <div class="profile-details">
+        <div class="profile-detail-item"><div class="detail-label">Kelas</div><div class="detail-value">XI TKJ 3</div></div>
+        <div class="profile-detail-item"><div class="detail-label">Asal Sekolah</div><div class="detail-value">SMK GEMA KARYA BAHANA</div></div>
+        <div class="profile-detail-item"><div class="detail-label">Tempat PKL</div><div class="detail-value">PT. FORTUNET SOLUSI INDONESIA</div></div>
+        <div class="profile-detail-item"><div class="detail-label">Tahun</div><div class="detail-value">2025 / 2026</div></div>
+      </div>
+      <p class="profile-bio">Saya adalah siswa SMK yang sedang menjalani program PKL. Selama PKL, saya mempelajari berbagai teknologi jaringan dan server — MikroTik, Debian Linux, hingga Cisco Packet Tracer.</p>
+      <div class="tag-list">
+        <span class="tag accent">MikroTik</span>
+        <span class="tag accent3">Debian Linux</span>
+        <span class="tag accent2">Cisco Packet Tracer</span>
+        <span class="tag">Networking</span>
+        <span class="tag">Server Admin</span>
+      </div>
+    </div>
+  </div>
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-num">9</div><div class="stat-label">Materi Dipelajari</div></div>
+    <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Teknologi Utama</div></div>
+    <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">Tempat PKL</div></div>
+  </div>
+  <div class="divider"></div>
+  <h3 style="font-size:18px;font-weight:700;margin-bottom:20px;">Perkembangan Skill</h3>
+  <div class="two-col">
+    <div>
+      <div class="skill-item"><div class="skill-header"><span>MikroTik Router</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span>Debian Linux</span><span>75%</span></div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span>Cisco Packet Tracer</span><span>65%</span></div><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
+    </div>
+    <div>
+      <div class="skill-item"><div class="skill-header"><span>Konfigurasi Jaringan</span><span>78%</span></div><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span>Server Management</span><span>70%</span></div><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+      <div class="skill-item"><div class="skill-header"><span>Troubleshooting</span><span>60%</span></div><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div></div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h3 style="font-size:18px;font-weight:700;margin-bottom:24px;">Timeline Pembelajaran</h3>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Tahap 1</div><div class="tl-title">Pengenalan MikroTik</div><div class="tl-body">Belajar konfigurasi dasar router MikroTik dengan 2 router.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Tahap 2</div><div class="tl-title">MikroTik 3 Router &amp; Hotspot</div><div class="tl-body">Menghubungkan 3 router dan membuat sistem hotspot dengan pemblokiran situs.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Tahap 3</div><div class="tl-title">Server Debian Linux</div><div class="tl-body">Konfigurasi DHCP, DNS, SSH, dan Web Server di Debian.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Tahap 4</div><div class="tl-title">Cisco Packet Tracer</div><div class="tl-body">Simulasi topologi star menggunakan Cisco Packet Tracer.</div></div>
+  </div>
+</div>
+
+<!-- ══ PAGE: ABSENSI ══ -->
+<div class="page" id="page-absensi">
+  <div class="page-eyebrow">// 02 — Kegiatan Harian</div>
+  <h1 class="page-title">Absensi <span class="title-accent">Harian</span></h1>
+  <p class="page-subtitle">Catat waktu masuk dan pulang setiap hari PKL. Batas tepat waktu: <strong style="color:var(--accent)">08:35</strong>.</p>
+
+  <div class="absen-hero">
+    <div class="absen-date-full" id="absen-date-full">HARI // BULAN TAHUN</div>
+    <div class="absen-date-big"  id="absen-date-big">-- --- ----</div>
+    <div class="absen-time-display" id="absen-live-clock">00:00:00</div>
+    <div class="absen-time-sub">Waktu saat ini (real-time)</div>
+    <div class="absen-actions">
+      <button class="absen-btn-main absen-btn-masuk" id="btn-masuk" onclick="absenMasuk()">✅ Absen Masuk</button>
+      <button class="absen-btn-main absen-btn-pulang" id="btn-pulang" onclick="absenPulang()" disabled>🏠 Absen Pulang</button>
+    </div>
+  </div>
+
+  <div class="absen-status-row">
+    <div class="absen-status-card">
+      <div class="absen-status-label">⏰ Jam Masuk</div>
+      <div class="absen-status-val masuk" id="display-masuk">Belum absen</div>
+    </div>
+    <div class="absen-status-card">
+      <div class="absen-status-label">🏠 Jam Pulang</div>
+      <div class="absen-status-val pulang" id="display-pulang">Belum pulang</div>
+    </div>
+    <div class="absen-status-card">
+      <div class="absen-status-label">⏱️ Durasi Kerja</div>
+      <div class="absen-status-val durasi" id="display-durasi">--</div>
+    </div>
+    <div class="absen-status-card">
+      <div class="absen-status-label">📌 Status Hari Ini</div>
+      <div id="display-ket-today" style="margin-top:6px;">--</div>
+    </div>
+    <div class="absen-status-card">
+      <div class="absen-status-label">📅 Total Hadir</div>
+      <div class="absen-status-val" style="color:var(--accent)" id="display-total-hadir">0 hari</div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+      <div class="card-title" style="margin-bottom:0;">📋 Riwayat Absensi</div>
+      <div class="filter-row" style="margin-bottom:0;">
+        <input type="month" id="filter-bulan" onchange="renderRiwayatAbsen()"/>
+        <button class="btn btn-ghost" onclick="exportAbsenCSV()">⬇️ Export CSV</button>
+      </div>
+    </div>
+    <div class="rekap-wrap">
+      <table class="rekap-table">
+        <thead>
+          <tr><th>#</th><th>Tanggal &amp; Hari</th><th>Jam Masuk</th><th>Jam Pulang</th><th>Durasi</th><th>Status</th><th>Aksi</th></tr>
+        </thead>
+        <tbody id="riwayat-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAGE: LOG KEGIATAN ══ -->
+<div class="page" id="page-kegiatan">
+  <div class="page-eyebrow">// 03 — Kegiatan Harian</div>
+  <h1 class="page-title">Log <span class="title-accent3">Kegiatan</span></h1>
+  <p class="page-subtitle">Catat setiap kegiatan selama PKL lengkap dengan tanggal, kategori, deskripsi, dan lokasi.</p>
+
+  <!-- Form -->
+  <div class="kegiatan-form">
+    <div class="card-title" style="margin-bottom:20px;">➕ Tambah Kegiatan Baru</div>
+    <div class="form-row-2">
+      <div class="form-field">
+        <label>Tanggal</label>
+        <input type="date" id="kg-tanggal"/>
+      </div>
+      <div class="form-field">
+        <label>Kategori</label>
+        <select id="kg-kategori">
+          <option>Networking</option>
+          <option>MikroTik</option>
+          <option>Debian Linux</option>
+          <option>Cisco</option>
+          <option>Server</option>
+          <option>Troubleshooting</option>
+          <option>Dokumentasi</option>
+          <option>Lainnya</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-field">
+      <label>Judul Kegiatan</label>
+      <input type="text" id="kg-judul" placeholder="Contoh: Konfigurasi DHCP Server di Debian..."/>
+    </div>
+    <div class="form-row-2">
+      <div class="form-field">
+        <label>Lokasi</label>
+        <input type="text" id="kg-lokasi" placeholder="Contoh: Lab Jaringan / Server Room"/>
+      </div>
+      <div class="form-field" style="display:flex;align-items:flex-end;">
+        <button class="btn btn-primary" style="width:100%;justify-content:center;padding:13px;" onclick="simpanKegiatan()">💾 Simpan Kegiatan</button>
+      </div>
+    </div>
+    <div class="form-field">
+      <label>Deskripsi / Catatan</label>
+      <textarea id="kg-deskripsi" placeholder="Ceritakan apa yang kamu pelajari atau kerjakan hari ini..."></textarea>
+    </div>
+    <!-- FOTO KEGIATAN -->
+    <div class="form-field">
+      <label>📸 Foto Kegiatan (opsional, bisa lebih dari 1)</label>
+      <div class="foto-upload-area"
+           onclick="document.getElementById('kg-foto').click()"
+           ondragover="event.preventDefault();this.style.borderColor='var(--accent)'"
+           ondragleave="this.style.borderColor=''"
+           ondrop="event.preventDefault();this.style.borderColor='';document.getElementById('kg-foto').files=event.dataTransfer.files;previewFoto(document.getElementById('kg-foto'))">
+        <div class="foto-upload-icon">📷</div>
+        <div class="foto-upload-text">Klik atau drag &amp; drop foto di sini</div>
+        <div class="foto-upload-sub">JPG, PNG, WEBP · Bisa pilih lebih dari 1 foto</div>
+        <input type="file" id="kg-foto" accept="image/*" multiple style="display:none;" onchange="previewFoto(this)"/>
+      </div>
+      <div id="kg-foto-preview"></div>
+    </div>
+  </div>
+
+  <!-- History -->
+  <div class="content-card">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="card-title" style="margin-bottom:0;">📜 History Kegiatan</div>
+        <span style="font-family:'Space Mono',monospace;font-size:11px;background:rgba(124,58,237,0.1);color:#a78bfa;border:1px solid rgba(124,58,237,0.2);padding:3px 10px;border-radius:20px;" id="kegiatan-count">0</span>
+      </div>
+      <div class="filter-row" style="margin-bottom:0;">
+        <input class="search-input" id="search-kegiatan" placeholder="🔍 Cari kegiatan..." oninput="renderHistoryKegiatan()" style="max-width:200px;"/>
+        <input type="month" id="filter-bulan-kg" onchange="renderHistoryKegiatan()"/>
+        <button class="btn btn-ghost" onclick="exportKegiatanCSV()">⬇️ Export CSV</button>
+      </div>
+    </div>
+    <div class="rekap-wrap">
+      <table class="rekap-table">
+        <thead>
+          <tr><th>#</th><th>Tanggal &amp; Hari</th><th>Judul Kegiatan</th><th>Kategori</th><th>Foto</th><th>Deskripsi</th><th>Lokasi</th><th>Aksi</th></tr>
+        </thead>
+        <tbody id="kegiatan-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAGE: PENGALAMAN BELAJAR ══ -->
+<div class="page" id="page-belajar">
+  <div class="page-eyebrow">// 04-06 — Pengalaman Belajar</div>
+  <h1 class="page-title">Materi <span class="title-accent">PKL</span></h1>
+  <p class="page-subtitle">Dokumentasi lengkap semua teknologi yang dipelajari selama PKL di PT. Fortunet Solusi Indonesia.</p>
+
+  <div class="exp-tabs">
+    <button class="exp-tab active" id="tab-mikrotik" onclick="setExpTab('mikrotik')">🔌 MikroTik</button>
+    <button class="exp-tab" id="tab-debian"   onclick="setExpTab('debian')">🖧 Debian Linux</button>
+    <button class="exp-tab" id="tab-cisco"    onclick="setExpTab('cisco')">📡 Cisco</button>
+  </div>
+
+  <!-- ── MIKROTIK ── -->
+  <div class="exp-section active" id="exp-mikrotik">
+    <h2 style="font-size:28px;font-weight:800;margin-bottom:8px;">MikroTik <span style="color:var(--accent)">Router</span></h2>
+    <p style="color:var(--muted);font-size:15px;margin-bottom:28px;">Konfigurasi router MikroTik dari 2 router, 3 router, hingga Hotspot &amp; blokir.</p>
+    <div style="display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap;">
+      <button class="btn btn-primary" id="mik-tab-1" onclick="setMikTab(1)" style="font-size:11px;">2 Router</button>
+      <button class="btn btn-ghost"   id="mik-tab-2" onclick="setMikTab(2)" style="font-size:11px;">3 Router</button>
+      <button class="btn btn-ghost"   id="mik-tab-3" onclick="setMikTab(3)" style="font-size:11px;">Hotspot &amp; Blokir</button>
+    </div>
+
+    <div id="mik-content-1">
+      <div class="content-card"><div class="card-header"><div class="card-icon cyan">🔌</div><div class="card-meta">MATERI 01 · MIKROTIK 2 ROUTER</div></div><div class="card-title">MikroTik 2 Router</div><div class="card-body"><p>Menghubungkan dua router MikroTik agar saling berkomunikasi dan berbagi koneksi internet.</p></div></div>
+      <div class="two-col">
+        <div class="content-card"><div class="card-title">🖧 Topologi</div><div class="card-body"><div style="text-align:center;padding:20px;background:var(--surface);border-radius:12px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);">
+          <div style="color:var(--accent);">[ Internet ]</div><div>↓</div>
+          <div style="padding:8px 16px;border:1px solid var(--accent);border-radius:6px;display:inline-block;color:var(--text);margin:6px 0;">Router 1 — 192.168.1.1</div><div>↓ ether2</div>
+          <div style="padding:8px 16px;border:1px solid var(--border);border-radius:6px;display:inline-block;color:var(--text);margin:6px 0;">Router 2 — 192.168.2.1</div><div>↓</div>
+          <div style="color:var(--green);">[ PC Client ]</div>
+        </div></div></div>
+        <div class="content-card"><div class="card-title">⚙️ Konfigurasi</div><div class="card-body">
+          <div class="code-label">Router 1</div>
+          <div class="code-block"><span class="comment"># Set IP WAN</span><br><span class="key">ip address add</span> <span class="val">address=x.x.x.x/24</span> <span class="key">interface=</span><span class="val">ether1</span><br><br><span class="comment"># Set IP LAN ke R2</span><br><span class="key">ip address add</span> <span class="val">address=192.168.1.1/24</span> <span class="key">interface=</span><span class="val">ether2</span></div>
+        </div></div>
+      </div>
+      <div class="content-card"><div class="card-title">📋 Langkah-Langkah</div><div class="steps-with-photos">
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">01</span><span>Hubungkan Router 1 ke internet via ether1.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 1</span></div><span class="photo-badge">STEP 01</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">02</span><span>Sambungkan ether2 R1 ke ether1 R2.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 2</span></div><span class="photo-badge">STEP 02</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">03</span><span>Login WinBox Router 1, set IP address tiap interface.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 3</span></div><span class="photo-badge">STEP 03</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">04</span><span>Aktifkan NAT Masquerade di Router 1.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 4</span></div><span class="photo-badge">STEP 04</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">05</span><span>Login Router 2, set IP dan gateway ke R1.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 5</span></div><span class="photo-badge">STEP 05</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">06</span><span>Ping dari R2 ke internet untuk tes koneksi.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 6</span></div><span class="photo-badge">STEP 06</span></div></div>
+      </div></div>
+      <div class="info-box"><strong>💡 Catatan:</strong> NAT Masquerade di Router 1 wajib diaktifkan agar Router 2 bisa akses internet.</div>
+    </div>
+
+    <div id="mik-content-2" style="display:none;">
+      <div class="content-card"><div class="card-title">🌐 MikroTik 3 Router</div><div class="card-body"><p>Tiga router berantai — setiap router menjadi gateway bagi router berikutnya.</p>
+        <div style="text-align:center;padding:20px;background:var(--surface);border-radius:12px;margin-top:16px;font-family:'Space Mono',monospace;font-size:12px;">
+          <div style="color:var(--accent);">[ Internet ]</div><div>↓</div>
+          <div style="padding:6px 14px;border:1px solid var(--accent);border-radius:6px;display:inline-block;color:var(--text);margin:4px 0;">R1 — 192.168.1.1</div><div>↓</div>
+          <div style="padding:6px 14px;border:1px solid var(--accent2);border-radius:6px;display:inline-block;color:var(--text);margin:4px 0;">R2 — 192.168.2.1</div><div>↓</div>
+          <div style="padding:6px 14px;border:1px solid var(--accent3);border-radius:6px;display:inline-block;color:var(--text);margin:4px 0;">R3 — 192.168.3.1</div><div>↓</div>
+          <div style="color:var(--green);">[ Client ]</div>
+        </div>
+      </div></div>
+      <div class="content-card"><div class="card-title">📋 Langkah-Langkah</div><div class="steps-with-photos">
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">01</span><span>Setup R1 dan R2 seperti materi 2 router.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 1</span></div><span class="photo-badge">STEP 01</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">02</span><span>Sambungkan ether2 R2 ke ether1 R3.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 2</span></div><span class="photo-badge">STEP 02</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">03</span><span>Set IP address tiap interface R3 via WinBox.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 3</span></div><span class="photo-badge">STEP 03</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">04</span><span>Tambah static route di R1 dan R2 ke network R3.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 4</span></div><span class="photo-badge">STEP 04</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">05</span><span>Aktifkan NAT di R1 untuk semua subnet.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 5</span></div><span class="photo-badge">STEP 05</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">06</span><span>Ping dari Client di R3 ke internet.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 6</span></div><span class="photo-badge">STEP 06</span></div></div>
+      </div></div>
+      <div class="warn-box"><strong>⚠️ Penting:</strong> Static route harus ditambahkan di R1 dan R2 agar return packet bisa kembali ke jaringan R3.</div>
+    </div>
+
+    <div id="mik-content-3" style="display:none;">
+      <div class="three-col">
+        <div class="content-card"><div class="card-icon cyan" style="margin-bottom:16px;">📶</div><div class="card-title">Hotspot Setup</div><div class="card-body">Membuat login page WiFi — user harus autentikasi sebelum akses internet.</div></div>
+        <div class="content-card"><div class="card-icon orange" style="margin-bottom:16px;">🚫</div><div class="card-title">Blokir Situs</div><div class="card-body">Blokir website menggunakan Layer 7 Protocol atau Web Proxy MikroTik.</div></div>
+        <div class="content-card"><div class="card-icon purple" style="margin-bottom:16px;">⏰</div><div class="card-title">Blokir Waktu</div><div class="card-body">Batasi akses internet di jam tertentu dengan Scheduler + Firewall Rule.</div></div>
+      </div>
+      <div class="content-card"><div class="card-title">📋 Langkah Hotspot</div><div class="steps-with-photos">
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">01</span><span>IP → Hotspot → Setup, pilih interface client (wlan1/ether).</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 1</span></div><span class="photo-badge">STEP 01</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">02</span><span>Tentukan IP Pool untuk client hotspot otomatis.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 2</span></div><span class="photo-badge">STEP 02</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">03</span><span>Buat user di Hotspot → Users, tes login dari client.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 3</span></div><span class="photo-badge">STEP 03</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">04</span><span>Tambah Layer 7 Protocol untuk blokir situs (YouTube dll).</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 4</span></div><span class="photo-badge">STEP 04</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">05</span><span>Setting firewall rule dengan time parameter untuk blokir waktu.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Foto Langkah 5</span></div><span class="photo-badge">STEP 05</span></div></div>
+      </div></div>
+      <div class="info-box"><strong>💡 Tips:</strong> Untuk HTTPS gunakan kombinasi Layer 7 + SNI matching di firewall.</div>
+    </div>
+  </div>
+
+  <!-- ── DEBIAN ── -->
+  <div class="exp-section" id="exp-debian">
+    <h2 style="font-size:28px;font-weight:800;margin-bottom:8px;">Debian <span style="color:var(--accent2)">Linux Server</span></h2>
+    <p style="color:var(--muted);font-size:15px;margin-bottom:28px;">Konfigurasi server penting di Debian: DHCP, DNS, SSH, dan Web Server Apache2.</p>
+    <div style="display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap;">
+      <button class="btn btn-primary" id="deb-tab-1" onclick="setDebTab(1)" style="font-size:11px;">DHCP Server</button>
+      <button class="btn btn-ghost"   id="deb-tab-2" onclick="setDebTab(2)" style="font-size:11px;">DNS Server</button>
+      <button class="btn btn-ghost"   id="deb-tab-3" onclick="setDebTab(3)" style="font-size:11px;">SSH Server</button>
+      <button class="btn btn-ghost"   id="deb-tab-4" onclick="setDebTab(4)" style="font-size:11px;">Web Server</button>
+    </div>
+
+    <div id="deb-content-1">
+      <div class="content-card"><div class="card-icon cyan" style="margin-bottom:16px;">🖧</div><div class="card-title">DHCP Server</div><div class="card-body"><p>DHCP otomatis memberikan IP address, subnet mask, gateway, dan DNS ke semua client.</p></div></div>
+      <div class="content-card"><div class="card-title">📋 Langkah Instalasi</div><div class="steps-with-photos">
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">01</span><span>apt-get update && apt-get install isc-dhcp-server</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Install DHCP</span></div><span class="photo-badge">STEP 01</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">02</span><span>Edit /etc/default/isc-dhcp-server, set INTERFACES="eth0".</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Set Interface</span></div><span class="photo-badge">STEP 02</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">03</span><span>Edit /etc/dhcp/dhcpd.conf — isi subnet, range, gateway, DNS.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>dhcpd.conf</span></div><span class="photo-badge">STEP 03</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">04</span><span>systemctl restart isc-dhcp-server && systemctl status</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Restart Service</span></div><span class="photo-badge">STEP 04</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">05</span><span>Verifikasi client mendapat IP otomatis dari range.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Verifikasi</span></div><span class="photo-badge">STEP 05</span></div></div>
+      </div></div>
+      <div class="info-box"><strong>✅ Verifikasi:</strong> Gunakan <code style="color:var(--accent)">ip addr</code> di client Linux untuk cek IP yang didapat.</div>
+    </div>
+
+    <div id="deb-content-2" style="display:none;">
+      <div class="content-card"><div class="card-icon orange" style="margin-bottom:16px;">🔍</div><div class="card-title">DNS Server (BIND9)</div><div class="card-body"><p>DNS menerjemahkan nama domain (pkl.local) menjadi IP address yang dikenali komputer.</p></div></div>
+      <div class="content-card"><div class="card-title">📋 Langkah Instalasi</div><div class="steps-with-photos">
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">01</span><span>apt-get install bind9 bind9utils bind9-doc</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Install BIND9</span></div><span class="photo-badge">STEP 01</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">02</span><span>Edit /etc/bind/named.conf.local — daftarkan zone pkl.local.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Zone Config</span></div><span class="photo-badge">STEP 02</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">03</span><span>Buat file /etc/bind/db.pkl.local — isi SOA, NS, A record.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Zone File</span></div><span class="photo-badge">STEP 03</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">04</span><span>systemctl restart bind9 && nslookup pkl.local dari client.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Test nslookup</span></div><span class="photo-badge">STEP 04</span></div></div>
+      </div></div>
+      <div class="info-box"><strong>💡 Tip:</strong> Gunakan <code style="color:var(--accent)">named-checkconf</code> dan <code style="color:var(--accent)">named-checkzone pkl.local db.pkl.local</code> sebelum restart.</div>
+    </div>
+
+    <div id="deb-content-3" style="display:none;">
+      <div class="content-card"><div class="card-icon purple" style="margin-bottom:16px;">🔐</div><div class="card-title">SSH Server</div><div class="card-body"><p>SSH memungkinkan akses remote terenkripsi ke server — aman dari penyadapan.</p></div></div>
+      <div class="content-card"><div class="card-title">📋 Langkah Konfigurasi</div><div class="steps-with-photos">
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">01</span><span>apt-get install openssh-server && systemctl status ssh</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Install SSH</span></div><span class="photo-badge">STEP 01</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">02</span><span>Edit /etc/ssh/sshd_config — atur Port, PermitRootLogin.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>sshd_config</span></div><span class="photo-badge">STEP 02</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">03</span><span>systemctl restart ssh && systemctl enable ssh</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Restart SSH</span></div><span class="photo-badge">STEP 03</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">04</span><span>Dari client: ssh user@192.168.100.1 lalu masukkan password.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Koneksi SSH</span></div><span class="photo-badge">STEP 04</span></div></div>
+      </div></div>
+      <div class="warn-box"><strong>⚠️ Keamanan:</strong> Di lingkungan produksi, gunakan SSH Key Authentication dan ubah port default 22.</div>
+    </div>
+
+    <div id="deb-content-4" style="display:none;">
+      <div class="content-card"><div class="card-icon green" style="margin-bottom:16px;">🌍</div><div class="card-title">Web Server Apache2</div><div class="card-body"><p>Apache2 melayani permintaan HTTP dari browser dan mengirimkan halaman web sebagai respons.</p></div></div>
+      <div class="content-card"><div class="card-title">📋 Langkah Konfigurasi</div><div class="steps-with-photos">
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">01</span><span>apt-get install apache2 && systemctl status apache2</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Install Apache2</span></div><span class="photo-badge">STEP 01</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">02</span><span>Akses http://192.168.100.1 di browser — halaman default muncul.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Apache Default</span></div><span class="photo-badge">STEP 02</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">03</span><span>Buat /etc/apache2/sites-available/pkl.conf (virtual host).</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Virtual Host</span></div><span class="photo-badge">STEP 03</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">04</span><span>a2ensite pkl.conf && systemctl restart apache2</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>a2ensite</span></div><span class="photo-badge">STEP 04</span></div></div>
+        <div class="step-photo-item"><div class="step-text-col"><span class="step-num">05</span><span>Buat file HTML di /var/www/pkl/ dan akses pkl.local dari browser.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Website Live</span></div><span class="photo-badge">STEP 05</span></div></div>
+      </div></div>
+      <div class="info-box"><strong>💡 Tip:</strong> Daftarkan domain pkl.local di DNS Server (BIND9) agar bisa diakses dari semua client.</div>
+    </div>
+  </div>
+
+  <!-- ── CISCO ── -->
+  <div class="exp-section" id="exp-cisco">
+    <h2 style="font-size:28px;font-weight:800;margin-bottom:8px;">Cisco <span style="color:var(--accent2)">Packet Tracer</span></h2>
+    <p style="color:var(--muted);font-size:15px;margin-bottom:28px;">Simulasi topologi star — semua device terhubung ke satu switch pusat.</p>
+    <div class="content-card"><div class="card-title">⭐ Topologi Star</div><div class="card-body"><p>Semua perangkat terhubung langsung ke switch pusat. Jika satu kabel putus, hanya device itu yang terpengaruh — jaringan lain tetap berjalan normal.</p></div></div>
+    <div class="topology-svg">
+      <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:320px;">
+        <line x1="250" y1="190" x2="250" y2="80"  stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+        <line x1="250" y1="190" x2="140" y2="120" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+        <line x1="250" y1="190" x2="100" y2="220" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+        <line x1="250" y1="190" x2="140" y2="300" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+        <line x1="250" y1="190" x2="250" y2="330" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+        <line x1="250" y1="190" x2="360" y2="300" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+        <line x1="250" y1="190" x2="400" y2="220" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+        <line x1="250" y1="190" x2="360" y2="120" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
+        <rect x="215" y="170" width="70" height="40" rx="8" fill="#16161f" stroke="#00e5ff" stroke-width="1.5"/>
+        <text x="250" y="194" text-anchor="middle" fill="#00e5ff" font-family="monospace" font-size="11" font-weight="bold">SWITCH</text>
+        <g><rect x="215" y="55"  width="70" height="30" rx="6" fill="#16161f" stroke="#7c3aed" stroke-width="1.2"/><text x="250" y="74"  text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="10">PC-1</text></g>
+        <g><rect x="105" y="98"  width="70" height="30" rx="6" fill="#16161f" stroke="#7c3aed" stroke-width="1.2"/><text x="140" y="117" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="10">PC-2</text></g>
+        <g><rect x="58"  y="202" width="70" height="30" rx="6" fill="#16161f" stroke="#7c3aed" stroke-width="1.2"/><text x="93"  y="221" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="10">PC-3</text></g>
+        <g><rect x="105" y="283" width="70" height="30" rx="6" fill="#16161f" stroke="#7c3aed" stroke-width="1.2"/><text x="140" y="302" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="10">PC-4</text></g>
+        <g><rect x="215" y="315" width="70" height="30" rx="6" fill="#16161f" stroke="#7c3aed" stroke-width="1.2"/><text x="250" y="334" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="10">PC-5</text></g>
+        <g><rect x="325" y="283" width="70" height="30" rx="6" fill="#16161f" stroke="#7c3aed" stroke-width="1.2"/><text x="360" y="302" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="10">PC-6</text></g>
+        <g><rect x="372" y="202" width="70" height="30" rx="6" fill="#16161f" stroke="#7c3aed" stroke-width="1.2"/><text x="407" y="221" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="10">PC-7</text></g>
+        <g><rect x="325" y="98"  width="70" height="30" rx="6" fill="#16161f" stroke="#7c3aed" stroke-width="1.2"/><text x="360" y="117" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="10">PC-8</text></g>
+      </svg>
+      <p style="text-align:center;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);margin-top:8px;">Topologi Star — Semua PC terhubung ke Switch pusat</p>
+    </div>
+    <div class="content-card" style="margin-top:24px;"><div class="card-title">📋 Langkah di Packet Tracer</div><div class="steps-with-photos">
+      <div class="step-photo-item"><div class="step-text-col"><span class="step-num">01</span><span>Buka Packet Tracer, drag 1 Switch 2960 ke workspace.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Buka PT</span></div><span class="photo-badge">STEP 01</span></div></div>
+      <div class="step-photo-item"><div class="step-text-col"><span class="step-num">02</span><span>Tambahkan beberapa PC dan susun melingkari switch.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Tambah PC</span></div><span class="photo-badge">STEP 02</span></div></div>
+      <div class="step-photo-item"><div class="step-text-col"><span class="step-num">03</span><span>Hubungkan tiap PC ke switch dengan kabel Straight-Through.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Pasang Kabel</span></div><span class="photo-badge">STEP 03</span></div></div>
+      <div class="step-photo-item"><div class="step-text-col"><span class="step-num">04</span><span>Klik tiap PC → Desktop → IP Config → isi 192.168.1.x/24.</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Set IP</span></div><span class="photo-badge">STEP 04</span></div></div>
+      <div class="step-photo-item"><div class="step-text-col"><span class="step-num">05</span><span>Command Prompt → ping ke IP PC lain. Harus Reply!</span></div><div class="step-photo-col"><div class="photo-placeholder"><span>📸</span><span>Ping Test</span></div><span class="photo-badge">STEP 05</span></div></div>
+    </div></div>
+    <div class="info-box"><strong>💡 Catatan:</strong> Lampu port switch berubah <span style="color:orange">oranye</span> → <span style="color:var(--green)">hijau</span> jika koneksi berhasil. Tunggu beberapa detik.</div>
+  </div>
+</div>
+
+<!-- ══ PAGE: PENUTUP ══ -->
+<div class="page" id="page-penutup">
+  <div class="page-eyebrow">// 07 — Penutup</div>
+  <h1 class="page-title">Terima <span class="title-accent">Kasih</span> 🎓</h1>
+  <p class="page-subtitle">Perjalanan PKL yang penuh pembelajaran, tantangan, dan pengalaman tak ternilai.</p>
+  <div class="closing-hero">
+    <div class="closing-glow"></div>
+    <div class="closing-badge">✨ PKL SELESAI ✨</div>
+    <h2 class="closing-title">Alhamdulillah,<br><span style="color:var(--accent)">Berhasil!</span></h2>
+    <p class="closing-subtitle">Selama PKL, saya mempelajari 9 materi penting di bidang jaringan komputer dan server. Setiap tantangan menjadi pelajaran berharga.</p>
+  </div>
+  <div class="closing-cards">
+    <div class="closing-card"><div class="closing-card-icon">🔌</div><div class="closing-card-title">MikroTik</div><div class="closing-card-desc">Konfigurasi 2 router, 3 router, hotspot, dan sistem blokir situs serta waktu.</div></div>
+    <div class="closing-card"><div class="closing-card-icon">🖥️</div><div class="closing-card-title">Debian Linux</div><div class="closing-card-desc">Membangun DHCP, DNS, SSH Server, dan Web Server Apache2.</div></div>
+    <div class="closing-card"><div class="closing-card-icon">📡</div><div class="closing-card-title">Cisco PT</div><div class="closing-card-desc">Simulasi topologi star dengan konfigurasi IP dan uji koneksi.</div></div>
+  </div>
+  <div class="divider"></div>
+  <div class="content-card">
+    <div class="card-title">🙏 Ucapan Terima Kasih</div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li><span class="step-num">🏫</span>Seluruh guru pembimbing di SMK Gema Karya Bahana</li>
+        <li><span class="step-num">🏢</span>Pembimbing lapangan di PT. Fortunet Solusi Indonesia</li>
+        <li><span class="step-num">👨‍👩‍👧</span>Orang tua yang selalu mendukung dan mendoakan</li>
+        <li><span class="step-num">👥</span>Teman-teman seperjuangan yang saling membantu</li>
+      </ul>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="content-card"><div class="card-title">💬 Kesan</div><div class="card-body"><p>PKL adalah pengalaman sangat berharga. Saya merasakan langsung dunia kerja IT — dari troubleshooting jaringan, konfigurasi server, hingga bekerja dalam tim profesional.</p></div></div>
+    <div class="content-card"><div class="card-title">📝 Pesan</div><div class="card-body"><p>Untuk adik kelas — persiapkan diri dengan baik, jangan takut bertanya. PKL adalah kesempatan emas mendapatkan pengalaman nyata. Manfaatkan sebaik mungkin!</p></div></div>
+  </div>
+  <div class="divider"></div>
+  <div class="closing-signature">
+    <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--muted);margin-bottom:20px;">— DIBUAT OLEH —</p>
+    <div class="sig-name">MUHAMAD ARYA PUTRA PRATAMA</div>
+    <div class="sig-detail">KELAS XI TKJ 3</div>
+    <div class="sig-school">SMK GEMA KARYA BAHANA</div>
+    <div class="sig-divider"></div>
+    <p class="sig-quote">"Ilmu tanpa praktik adalah kosong, praktik tanpa ilmu adalah buta. PKL mengajarkan saya keduanya sekaligus."</p>
+    <div class="sig-date" id="sig-date"></div>
+  </div>
+</div>
+
+</div><!-- end #main -->
+
+<!-- ══ MODAL DETAIL KEGIATAN ══ -->
+<div class="modal-overlay" id="modal-kegiatan">
+  <div class="modal-box">
+    <div class="modal-title" id="modal-kg-title">Detail Kegiatan</div>
+    <div style="margin-bottom:14px;">
+      <div style="font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:4px;" id="modal-kg-tanggal"></div>
+      <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:8px;" id="modal-kg-waktu"></div>
+      <div id="modal-kg-kat"></div>
+    </div>
+    <div style="background:var(--card);border-radius:10px;padding:14px;margin-bottom:10px;">
+      <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:6px;letter-spacing:1px;">📍 LOKASI</div>
+      <div style="font-size:14px;" id="modal-kg-lokasi"></div>
+    </div>
+    <div style="background:var(--card);border-radius:10px;padding:14px;margin-bottom:10px;">
+      <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:6px;letter-spacing:1px;">📝 DESKRIPSI</div>
+      <div style="font-size:14px;color:var(--muted);line-height:1.7;white-space:pre-wrap;" id="modal-kg-desk"></div>
+    </div>
+    <div id="modal-kg-fotos" style="background:var(--card);border-radius:10px;padding:14px;margin-bottom:10px;display:none;"></div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-kegiatan')">Tutup</button>
+      <button class="btn btn-primary" id="modal-kg-kirim-btn">📤 Kirim Laporan</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MODAL KIRIM LAPORAN ══ -->
+<div class="modal-overlay" id="modal-kirim">
+  <div class="modal-box" style="max-width:560px;">
+    <div class="modal-title">📤 Kirim Laporan</div>
+
+    <!-- Preview ringkasan -->
+    <div class="kirim-preview">
+      <div class="kirim-preview-title" id="kirim-judul">—</div>
+      <div class="kirim-row"><span class="kirim-lbl">Tanggal</span><span class="kirim-val" id="kirim-tanggal"></span></div>
+      <div class="kirim-row"><span class="kirim-lbl">Kategori</span><span class="kirim-val" id="kirim-kat"></span></div>
+      <div class="kirim-row"><span class="kirim-lbl">Lokasi</span><span class="kirim-val" id="kirim-lokasi"></span></div>
+      <div class="kirim-row"><span class="kirim-lbl">Deskripsi</span><span class="kirim-val" id="kirim-desk" style="color:var(--muted);font-size:12px;"></span></div>
+      <div style="margin-top:12px;">
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:8px;letter-spacing:1px;">📸 FOTO</div>
+        <div id="kirim-fotos" style="display:flex;flex-wrap:wrap;gap:6px;"></div>
+      </div>
+    </div>
+
+    <!-- Pilihan cara kirim -->
+    <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:12px;letter-spacing:1px;">PILIH CARA KIRIM:</div>
+    <div class="kirim-options">
+      <button class="kirim-option-btn wa" id="btn-kirim-wa">
+        <div class="kirim-option-icon">💬</div>
+        <div class="kirim-option-label">WhatsApp</div>
+        <div class="kirim-option-sub">Kirim teks laporan ke WA pembimbing</div>
+      </button>
+      <button class="kirim-option-btn dl" id="btn-kirim-download">
+        <div class="kirim-option-icon">⬇️</div>
+        <div class="kirim-option-label">Download</div>
+        <div class="kirim-option-sub">Simpan laporan + foto sebagai file HTML</div>
+      </button>
+      <button class="kirim-option-btn pr" id="btn-kirim-print">
+        <div class="kirim-option-icon">🖨️</div>
+        <div class="kirim-option-label">Print / PDF</div>
+        <div class="kirim-option-sub">Download lalu print atau simpan sebagai PDF</div>
+      </button>
+    </div>
+
+    <div class="modal-footer" style="margin-top:20px;">
+      <button class="btn btn-ghost" onclick="closeModal('modal-kirim')">Tutup</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<!-- ══ TOAST ══ -->
+<div class="toast" id="toast-msg"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
